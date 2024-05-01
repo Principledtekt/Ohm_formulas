@@ -1,0 +1,16 @@
+
+
+{
+    "name": "Ohm's Law, formulas",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#242930",
+    "background_color": "#27282c",
+    "icons": [
+        {
+            "src": "icon512.png",
+            "sizes": "512x512"
+        }
+    ]
+ }
+ 

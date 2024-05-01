@@ -1,0 +1,139 @@
+body {
+    background-color: rgb(31, 30, 37);
+    overflow: auto;
+}
+
+div {
+    margin: auto;
+    padding: 1%;
+    max-width: 298pt;
+}
+
+b {
+    width: 10px;
+    padding: 1px;
+}
+
+.text {
+    color: antiquewhite;
+
+}
+
+table {
+    width: 100%;
+    max-width: 298pt;
+}
+
+label {
+    padding: 4px;
+    background-color: #a1f4d8;
+    border-radius: 4px;
+    display: flex;
+    width: 98%;
+}
+
+input {
+    height: 20px;
+    border: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgb(253, 249, 231);
+    width: 30%;
+    font-size: large;
+    font-weight: bold;
+}
+
+input:focus {
+    outline: 2px solid slateblue;
+}
+
+#button {
+    background-color: rgb(38, 38, 151);
+    border-radius: 5px;
+    padding: 1%;
+    cursor: pointer;
+}
+
+i {
+    align-items: center;
+    display: flex;
+}
+
+.f {
+    width: 25%;
+    background-color: darkblue;
+    padding: 1%;
+    transition: 0.5s;
+}
+
+svg {
+    width: 48%;
+    height: auto;
+}
+
+svg text {
+    fill: #faebd7;
+}
+
+svg tspan {
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input::placeholder {
+    font-size: small;
+}
+
+/* input:invalid {
+    background: rgb(252, 186, 186);
+} */
+
+.radio {
+    background-color: initial;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.checkbox {
+    width: 20px;
+    display: none;
+}
+
+.check {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#stch {
+    width: 40px;
+    height: 20px;
+    border-radius: 20px;
+    border: rgb(213, 255, 255) solid 1px;
+    background-color: rgb(187, 219, 247);
+    margin-right: 1%;
+}
+
+#m {
+    position: absolute;
+    z-index: 1;
+    width: 19px;
+    height: 19px;
+    border-radius: 19px;
+    background-color: darkblue;
+    transition: .8s;
+    box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+input[type="checkbox"]:checked+#m {
+    transform: translateX(20px);
+    background-color: #008b8b;
+}
+
+input[type="checkbox"]:checked~#stch {
+    background-color: #42ff71;
+}

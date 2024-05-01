@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Закон Ома</title>
+    <link rel="shortcut icon" href="favicon1.svg">
+
+    <link rel="stylesheet" href="ohm.css">
+    <link rel="manifest" href="ohm.webmanifest">
+
+    <script src="ohm.js" defer></script>
+
+</head>
+
+<body>
+
+    <div>
+        <table>
+            <tr>
+                <td id="U1" class="text f"><label class="radio"><input type="radio" name="x" value="URI">
+                        <span id="uri">U=RI</span></label>
+                </td>
+                <td id="I1" class="text f"><label class="radio"><input type="radio" name="x" value="IUR">
+                        <span id="iur">I=U/R</span></label>
+                </td>
+                <td id="R1" class="text f"><label class="radio"><input type="radio" name="x" value="RUI">
+                        <span id="rui">R=U/I</span></label>
+                </td>
+                <td id="P1" class="text f"><label class="radio"><input type="radio" name="x" value="PUI">
+                        <span id="pui">P=UI</span></label>
+                </td>
+            </tr>
+            <tr>
+                <td id="U2" class="text f"><label class="radio"><input type="radio" name="x" value="UPI">
+                        <span id="upi">U=P/I</span></label>
+                </td>
+                <td id="I2" class="text f"><label class="radio"><input type="radio" name="x" value="IPU">
+                        <span id="ipu">I=P/U</span></label>
+                </td>
+                <td id="R2" class="text f"><label class="radio"><input type="radio" name="x" value="RPI">R=P/I²</label>
+                </td>
+                <td id="P2" class="text f"><label class="radio"><input type="radio" name="x" value="PIR">P=I²R</label>
+                </td>
+            </tr>
+            <tr>
+                <td id="U3" class="text f"><label class="radio"><input type="radio" name="x" value="UPR">
+                        <span id="upr">U=√PR</span></label>
+                </td>
+                <td id="I3" class="text f"><label class="radio"><input type="radio" name="x" value="IPR">I=√P/R</label>
+                </td>
+                <td id="R3" class="text f"><label class="radio"><input type="radio" name="x" value="RUP">
+                        <span id="rup">R=U²/P</span></label>
+                </td>
+                <td id="P3" class="text f"><label class="radio"><input type="radio" name="x" value="PUR">
+                        <span id="pur">P=U²/R</span></label>
+                </td>
+            </tr>
+            <tr class="cosfi-tr" hidden>
+                <td id="U4" class="text f"><label class="radio"><input type="radio" name="x" value="UPIcos">
+                        <span id="upicos">U=P/Icos(φ)</span></label></td>
+                <td id="I4" class="text f"><label class="radio"><input type="radio" name="x" value="IPUcos">
+                        <span id="ipucos">I=P/Ucos(φ)</span></label></td>
+                <td id="R4" class="text f"><label class="radio"><input type="radio" name="x" value=""></label>
+                </td>
+                <td id="P4" class="text f"><label class="radio"><input type="radio" name="x" value="PIUcos">
+                        <span id="piucos">P=IUcos(φ)</span></label></td>
+            </tr>
+
+            <tr>
+                <td colspan="4">
+                    <label id="U"><b class="vu">U</b><input id="voltage" type="number" data-p="vo"
+                            placeholder="Напряжение">
+                        <span id="v"> V В, вольт</span></label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label id="I"><b>I</b><input id="current" type="number" data-p="cu" placeholder="Ток">
+                        <span id="a"> А, ампер</span></label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label id="R"><b>R</b><input id="resistance" type="number" data-p="re" placeholder="Сопротивление">
+                        <span id="om">Ω Ом, ом</span></label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label id="P"><b>P</b><input id="power" type="number" data-p="po" placeholder="Мощность">
+                        <span id="w"> W Вт, ватт</span></label>
+                </td>
+            </tr>
+            <tr class="cosfi-tr" hidden>
+                <td colspan="4">
+                    <label id="fi"><b>φ</b><input id="cosfi" type="number" data-p="cosp" placeholder="Коэф. мощности"
+                            min="0.0" max="1.0" step="0.01"><span id="cos"> cos(φ), косинус фи</span></label>
+                </td>
+            </tr>
+        </table>
+        <label class="text check">
+            <input type="checkbox" id="check-cosfi" class="checkbox" onchange="checkcosfi()">
+            <span id="m"></span><span id="stch"></span>
+            <span id="cosch">Учитывать коэффициент мощности</span></label>
+
+
+        <svg width="120mm" height="105mm" viewBox="0 0 120 105" version="1.1" id="svg1"
+            xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+
+            <g id="layer1">
+                <path style="fill:none;stroke:#c5c2c2;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1"
+                    id="path1" d="M 59.826235,1.7969971 118.4263,103.29529 l -117.2001336,0 z"
+                    transform="translate(0.173768)" />
+                <path style="fill:#353535;stroke:#c5c2c2;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;
+                    stroke-dasharray:none" d="M 26.389664,59.999908 60.004115,1.8179955 93.610347,60.009023 Z"
+                    id="path2" />
+                <path style="fill:#353535;stroke:#c5c2c2;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;
+                    stroke-dasharray:none"
+                    d="M 59.990791,59.990791 60.006745,103.3163 1.398954,103.29696 26.385007,60.004467 Z" id="path3" />
+                <path style="fill:#353535;stroke:#c5c2c2;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;
+                    stroke-dasharray:none"
+                    d="m 59.993852,59.993852 0.0061,43.321598 58.623218,-0.0228 -25.026554,-43.292745 z" id="path4" />
+                <g id="g6">
+                    <text xml:space="preserve" transform="matrix(0.26458333,0,0,0.26458333,0.58349705,0.58349705)"
+                        id="text4" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:169.333px;line-height:1.25;
+                        font-family:Calibri;font-variant-ligatures:normal;font-variant-caps:normal;
+                        font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;display:inline;">
+                        <tspan onclick="this.style.fill='#008b8b'" x="170.70898" y="206.60777" id="tspanU" class="vu">U</tspan>
+                    </text>
+                    <text xml:space="preserve" transform="matrix(0.26458333,0,0,0.26458333,16.629666,-3.7927308)"
+                        id="text5" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:169.333px;line-height:1.25;
+                        font-family:Calibri;font-variant-ligatures:normal;font-variant-caps:normal;
+                        font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;display:inline;">
+                        <tspan onclick="this.style.fill='#008b8b'" x="67.263672" y="379.72692" id="tspanI">I</tspan>
+                    </text>
+                    <text xml:space="preserve" transform="matrix(0.26458333,0,0,0.26458333,8.1689587,-0.87524558)"
+                        id="text6" style="font-weight:bold;font-size:169.333px;line-height:1.25;font-family:Calibri;white-space:pre;
+                        display:inline;">
+                        <tspan onclick="this.style.fill='#008b8b'" x="229.35547" y="369.80309" id="tspanR">R</tspan>
+                    </text>
+                </g>
+            </g>
+        </svg>
+        <svg width="120mm" height="105mm" viewBox="0 0 120 105" version="1.1" id="svg1"
+            xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+
+            <g id="layer1">
+                <path style="fill:none;stroke:#c5c2c2;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1"
+                    id="path1" d="M 59.826235,1.7969971 118.4263,103.29529 l -117.2001336,0 z"
+                    transform="translate(0.173768)" />
+                <path style="fill:#353535;stroke:#c5c2c2;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;
+                    stroke-dasharray:none" d="M 26.389664,59.999908 60.004115,1.8179955 93.610347,60.009023 Z"
+                    id="path2" />
+                <path style="fill:#353535;stroke:#c5c2c2;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;
+                    stroke-dasharray:none"
+                    d="M 59.990791,59.990791 60.006745,103.3163 1.398954,103.29696 26.385007,60.004467 Z" id="path3" />
+                <path style="fill:#353535;stroke:#c5c2c2;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;
+                    stroke-dasharray:none"
+                    d="m 59.993852,59.993852 0.0061,43.321598 58.623218,-0.0228 -25.026554,-43.292745 z" id="path4" />
+                <g id="g6">
+                    <text xml:space="preserve" transform="matrix(0.26458333,0,0,0.26458333,0.58349705,0.58349705)"
+                        id="text4" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:169.333px;line-height:1.25;
+                        font-family:Calibri;font-variant-ligatures:normal;font-variant-caps:normal;
+                        font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;
+                        display:inline;;fill-opacity:1;stroke:none">
+                        <tspan onclick="this.style.fill='#008b8b'" x="182.70898" y="206.60777" id="tspanP2">P</tspan>
+                    </text>
+                    <text xml:space="preserve" transform="matrix(0.26458333,0,0,0.26458333,16.629666,-3.7927308)"
+                        id="text5" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:169.333px;line-height:1.25;
+                        font-family:Calibri;font-variant-ligatures:normal;font-variant-caps:normal;
+                        font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;display:inline;">
+                        <tspan onclick="this.style.fill='#008b8b'" x="67.263672" y="379.72692" id="tspanI2">I</tspan>
+                    </text>
+                    <text xml:space="preserve" transform="matrix(0.26458333,0,0,0.26458333,8.1689587,-0.87524558)"
+                        id="text6" style="font-weight:bold;font-size:169.333px;line-height:1.25;font-family: Calibri;white-space:pre;
+                        display:inline;">
+                        <tspan onclick="this.style.fill='#008b8b'" x="222.35547" y="369.80309" id="tspanU2" class="vu">U</tspan>
+                    </text>
+                </g>
+            </g>
+        </svg>
+    </div>
+    <div id="text" class="text">
+        Сила тока в участке цепи прямо пропорциональна напряжению и обратно пропорциональна электрическому сопротивлению
+        данного участка цепи.
+    </div>
+    <select name="languages" id="l">
+        <option value="ru" id="ru">Русский</option>
+        <option value="en" id="en">English</option>
+        <option value="de" id="de">Deutsch</option>
+        <option value="es" id="es">Español</option>
+        <option value="uk" id="uk">Українська</option>
+        <option value="sr" id="sr">Српски / srpski</option>
+    </select>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js', { scope: '/' })
+            // .then((registration) => {
+            //     console.log("Service worker registered:", registration);
+            // })
+            // .catch((error) => {
+            //     console.log("Error during registration service worker:", error);
+            // });
+        } else {
+            console.log("Service worker cannot be installed.");
+        }
+    </script>
+    <script src="lang.js"></script>
+</body>
+
+</html>
