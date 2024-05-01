@@ -222,7 +222,7 @@ if (sel) {
     lang(sel);
 }
 else {
-    let navlen = "sr"//navigator.language.slice(0, 2);
+    let navlen = navigator.language.slice(0, 2);
     if (navlen !== "ru") checklang(navlen);
 
     function checklang(navlen) {
@@ -233,7 +233,6 @@ else {
                 break
             }
             else { lang("en"); }
-            // console.log(el);
         }
     }
 }
@@ -243,7 +242,6 @@ selleng.addEventListener('change', function () {
     lang(selected);
 
 })
-// console.log();
 
 function lang(selected) {
     if (selected=="def") return;
@@ -268,7 +266,6 @@ function lang(selected) {
         }
         if (dataP) {
             dataP.forEach(e => {
-                // console.log(e.dataset.p)
                 if (key == e.dataset.p) {
                     e.setAttribute("placeholder", obj[key][selected]);
                 }
@@ -277,6 +274,5 @@ function lang(selected) {
     }
     localStorage.setItem('lang', selected);
 
-// console.log(1)
     document.querySelector(`#${selected}`).selected = true;
 }
