@@ -1,5 +1,5 @@
 const CACHE_NAME = `ohm-v1`;
-const CACHEABLE_RESOURCES = ["/Ohm_formulas", "ohm.css", "ohm.js", "lang.js", "sw.js", "error.html"];
+const CACHEABLE_RESOURCES = ["/Ohm_formulas/", "ohm.css", "ohm.js", "lang.js", "sw.js", "error.html"];
 
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
