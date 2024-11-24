@@ -24,7 +24,7 @@ function ohmlaw() {
         case 'URI': {
             // document.querySelectorAll('.f').forEach(e => { e.removeAttribute('style') });
             U = I * R;
-            document.getElementById('voltage').value = U.toFixed(5);
+            document.getElementById('voltage').value = parseFloat(U.toFixed(5));
             document.getElementById('U1').style.backgroundColor = '#006868';
             idu.style.backgroundColor = '#00ff40';
             calcU = document.querySelectorAll('#current, #resistance');
@@ -35,7 +35,7 @@ function ohmlaw() {
 
         case 'UPI': {
             U = P / I;
-            document.getElementById('voltage').value = U.toFixed(5);
+            document.getElementById('voltage').value = parseFloat(U.toFixed(5));
             document.getElementById('U2').style.backgroundColor = '#006868';
             idu.style.backgroundColor = '#00ff40';
             calcU = document.querySelectorAll('#current, #power');
@@ -47,7 +47,7 @@ function ohmlaw() {
 
         case 'UPR': {
             U = Math.sqrt(P * R);
-            document.getElementById('voltage').value = U.toFixed(5);
+            document.getElementById('voltage').value = parseFloat(U.toFixed(5));
             document.getElementById('U3').style.backgroundColor = '#006868';
             idu.style.backgroundColor = '#00ff40';
             calcU = document.querySelectorAll('#resistance, #power');
@@ -59,7 +59,7 @@ function ohmlaw() {
 
         case 'UPIcos': {
             U = P / I * cosfi;
-            document.getElementById('voltage').value = U.toFixed(5);
+            document.getElementById('voltage').value = parseFloat(U.toFixed(5));
             document.getElementById('U4').style.backgroundColor = '#006868';
             idu.style.backgroundColor = '#00ff40';
             calcU = document.querySelectorAll('#current, #power, #cosfi');
