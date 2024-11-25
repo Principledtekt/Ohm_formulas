@@ -21,7 +21,7 @@ function ohmlaw() {
     // console.log(U, I, R, P, cosfi, formula)
     switch (formula) {
         //voltage
-        case 'URI': {
+        case 'UIR': {
             // document.querySelectorAll('.f').forEach(e => { e.removeAttribute('style') });
             U = I * R;
             document.getElementById('voltage').value = parseFloat(U.toFixed(5));
@@ -29,7 +29,7 @@ function ohmlaw() {
             idu.style.backgroundColor = '#00ff40';
             calcU = document.querySelectorAll('#current, #resistance');
             calcU.forEach(e => { e.addEventListener('input', ohmlaw) });
-            // console.log('URI');
+            // console.log('UIR');
             break;
         }
 
@@ -73,7 +73,7 @@ function ohmlaw() {
         //Amperage
         case 'IUR': {
             I = U / R;
-            document.getElementById('current').value = I;
+            document.getElementById('current').value = parseFloat(I.toFixed(5));
             document.getElementById('I1').style.backgroundColor = '#006868';
             idi.style.backgroundColor = '#00ff40';
             calcI = document.querySelectorAll('#voltage, #resistance');
@@ -84,7 +84,7 @@ function ohmlaw() {
 
         case 'IPU': {
             I = P / U;
-            document.getElementById('current').value = I;
+            document.getElementById('current').value = parseFloat(I.toFixed(5));
             document.getElementById('I2').style.backgroundColor = '#006868';
             idi.style.backgroundColor = '#00ff40';
             calcI = document.querySelectorAll('#voltage, #power');
@@ -96,7 +96,7 @@ function ohmlaw() {
 
         case 'IPR': {
             I = Math.sqrt(P / R);
-            document.getElementById('current').value = I;
+            document.getElementById('current').value = parseFloat(I.toFixed(5));
             document.getElementById('I3').style.backgroundColor = '#006868';
             idi.style.backgroundColor = '#00ff40';
             calcI = document.querySelectorAll('#resistance #power');
@@ -108,7 +108,7 @@ function ohmlaw() {
 
         case 'IPUcos': {
             I = P / (U * cosfi);
-            document.getElementById('current').value = I;
+            document.getElementById('current').value = parseFloat(I.toFixed(5));
             document.getElementById('I4').style.backgroundColor = '#006868';
             idi.style.backgroundColor = '#00ff40';
             calcI = document.querySelectorAll('#voltage, #power, #cosfi');
@@ -119,10 +119,10 @@ function ohmlaw() {
 
 
 
-        //Resistence
+        //Resistance
         case 'RUI': {
             R = U / I;
-            document.getElementById('resistance').value = R;
+            document.getElementById('resistance').value = parseFloat(R.toFixed(5));
             document.getElementById('R1').style.backgroundColor = '#006868';
             idr.style.backgroundColor = '#00ff40';
             calcI = document.querySelectorAll('#voltage, #current');
@@ -134,7 +134,7 @@ function ohmlaw() {
 
         case 'RPI': {
             R = P / Math.pow(I, 2);
-            document.getElementById('resistance').value = R;
+            document.getElementById('resistance').value = parseFloat(R.toFixed(5));
             document.getElementById('R2').style.backgroundColor = '#006868';
             idr.style.backgroundColor = '#00ff40';
             calcI = document.querySelectorAll('#power, #current');
@@ -146,7 +146,7 @@ function ohmlaw() {
 
         case 'RUP': {
             R = Math.pow(U, 2) / P;
-            document.getElementById('resistance').value = R;
+            document.getElementById('resistance').value = parseFloat(R.toFixed(5));
             document.getElementById('R3').style.backgroundColor = '#006868';
             idr.style.backgroundColor = '#00ff40';
             calcI = document.querySelectorAll('#voltage, #power');
@@ -160,7 +160,7 @@ function ohmlaw() {
         //Power
         case 'PUI': {
             P = U * I;
-            document.getElementById('power').value = P;
+            document.getElementById('power').value = parseFloat(P.toFixed(5));
             document.getElementById('P1').style.backgroundColor = '#006868';
             idp.style.backgroundColor = '#00ff40';
             calcI = document.querySelectorAll('#voltage, #current');
@@ -172,7 +172,7 @@ function ohmlaw() {
 
         case 'PIR': {
             P = Math.pow(I, 2) * R;
-            document.getElementById('power').value = P;
+            document.getElementById('power').value = parseFloat(P.toFixed(5));
             document.getElementById('P2').style.backgroundColor = '#006868';
             idp.style.backgroundColor = '#00ff40';
             calcI = document.querySelectorAll('#current, #resistance');
@@ -184,7 +184,7 @@ function ohmlaw() {
 
         case 'PUR': {
             P = Math.pow(U, 2) / R;
-            document.getElementById('power').value = P;
+            document.getElementById('power').value = parseFloat(P.toFixed(5));
             document.getElementById('P3').style.backgroundColor = '#006868';
             idp.style.backgroundColor = '#00ff40';
             calcI = document.querySelectorAll('#voltage, #resistance');
@@ -195,7 +195,7 @@ function ohmlaw() {
 
         case 'PIUcos': {
             P = I * U * cosfi;
-            document.getElementById('power').value = P;
+            document.getElementById('power').value = parseFloat(P.toFixed(5));
             document.getElementById('P4').style.backgroundColor = '#006868';
             idp.style.backgroundColor = '#00ff40';
             calcI = document.querySelectorAll('#voltage, #current, #power, #cosfi');
@@ -212,7 +212,7 @@ function ohmlaw() {
         }
     }
     // udalenije podsvetk formuly
-    if (formula !== 'URI') { document.getElementById('U1').removeAttribute('style') };
+    if (formula !== 'UIR') { document.getElementById('U1').removeAttribute('style') };
     if (formula !== 'UPI') { document.getElementById('U2').removeAttribute('style') };
     if (formula !== 'UPR') { document.getElementById('U3').removeAttribute('style') };
     if (formula !== 'UPIcos') { document.getElementById('U4').removeAttribute('style') };
@@ -232,7 +232,7 @@ function ohmlaw() {
     if (formula !== 'PIUcos') { document.getElementById('P4').removeAttribute('style') };
 
     // udalen. podsv. label input
-    if (formula !== 'URI' && formula !== 'UPI' && formula !== 'UPR' && formula !== 'UPIcos') { document.getElementById('U').removeAttribute('style') };
+    if (formula !== 'UIR' && formula !== 'UPI' && formula !== 'UPR' && formula !== 'UPIcos') { document.getElementById('U').removeAttribute('style') };
     if (formula !== 'IUR' && formula !== 'IPU' && formula !== 'IPR' && formula !== 'IPUcos') { document.getElementById('I').removeAttribute('style') };
     if (formula !== 'RUI' && formula !== 'RPI' && formula !== 'RUP') { document.getElementById('R').removeAttribute('style') };
     if (formula !== 'PUI' && formula !== 'PIR' && formula !== 'PUR' && formula !== 'PIUcos') {
