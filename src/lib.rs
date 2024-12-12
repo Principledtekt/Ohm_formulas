@@ -1,7 +1,7 @@
 // voltage
 #[wasm_bindgen]
 pub fn u_ir(i: f64, r: f64) -> f64 {
-    (i * r * 100000.0).round() / 100000.0
+    (i * r * 1000.0).round() / 1000.0
 }
 
 #[wasm_bindgen]
